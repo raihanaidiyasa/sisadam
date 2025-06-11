@@ -1,0 +1,213 @@
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    background-color: #f0f2f5;
+}
+.header {
+    position: sticky;
+    top: 0%;
+    z-index: 1000;
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 7.699999809265137px 3px rgba(0, 0, 0, 0.25);
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+.header .logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+.header .logo .brand{
+    width: 100%; 
+    height: 100%; 
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: #DB005B;
+    font-size: 22px;
+    padding-left: 10px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 29.44px;
+    word-wrap: break-word;
+
+}
+
+.header .nav-link {
+    color: #555;
+    text-decoration: none; 
+    padding: 8px 15px; 
+    font-weight: 500; 
+    font-family: 'Poppins', sans-serif; 
+    transition: background-color 0.3s ease; 
+    margin-left: auto; 
+    margin-right: 10px; 
+}
+
+.header .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px;
+}
+
+.header .login-button {
+    background-color: white;
+    border-radius: 8px;
+    background: var(--Btn, linear-gradient(134deg, #DB005B 10.76%, #9E03A3 96.99%));
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    width: 150px;
+    height: 43.173px;
+    flex-shrink: 0;
+}
+
+.breadcrumb {
+    margin: 30px 50px 10px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.search-results-container {
+    margin: 10px 50px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-results-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    background: #f5f5f5;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background: #DB005B;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button i {
+    font-size: 16px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.table-wrapper thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table-wrapper thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+.table-wrapper th {
+    background: #DB87B3;
+    color: black;
+    font-weight: 600;
+    text-align: left;
+    padding: 15px;
+}
+
+.table-wrapper td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-weight: 400;
+}
+
+.table-wrapper a {
+    color: #2D35B5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.pagination button {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: not-allowed;
+}
+
+
+.footer {
+    background: linear-gradient(132deg, #DB005B 0%, #9E03A3 100%);
+    box-shadow: 0px -5px 15.600000381469727px 2px rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 10px 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+}
+.footer .left-text {
+    
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-title {
+    padding-top: 15px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins'; 
+    font-weight: 700; 
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.footer-subtitle {
+    padding-bottom: 15px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins'; 
+    font-weight: 300; 
+    line-height: 1.8; 
+}
+
+.footer .right-text {
+    font-size: 0.9em;
+    font-weight: 400;
+}
