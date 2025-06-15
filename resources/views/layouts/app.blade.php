@@ -15,11 +15,13 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">
-            <img src="{{ asset('image/logo_sisadam.png') }}" alt="Logo">
-            <div class="brand">Satu Data <br> Mahasiswa</div>
-        </div>
-
+        <a href="{{ route('dashboardPublic') }}" class="logo-link"> 
+            <div class="logo">
+                <img src="{{ asset('image/logo_sisadam.png') }}" alt="Logo">
+                <div class="brand">Satu Data <br> Mahasiswa</div>
+            </div>
+        </a>
+        
         <div class="header-right-nav">
             <a href="#" class="nav-link">About Us</a>
             <a href="#" class="nav-link">Dataset</a>

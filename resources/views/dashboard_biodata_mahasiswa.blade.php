@@ -5,7 +5,6 @@
 @section('content') {{-- Memulai bagian konten --}}
 
 <link rel="stylesheet" href="{{ asset('dashboard_public/dashboard_biodata_mahasiswa.css') }}">
-77
     <div class="breadcrumb">
         <span>Beranda</span> &gt; <strong>Hasil Pencarian</strong>
     </div>

@@ -39,6 +39,11 @@ body {
 
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header .nav-link {
     color: #555;
     text-decoration: none; 

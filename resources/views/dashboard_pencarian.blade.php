@@ -33,7 +33,7 @@
                         <td>1227050112</td>
                         <td>Laki Laki</td>
                         <td>Teknik Lingkungan</td>
-                        <td><a href="#">Lihat Detail</a></td>
+                        <td><a href="{{ route('dashboardBiodata') }}">Lihat Detail</a></td>
                     </tr>
                     <tr>
                         <td>Raihan Aidigimon</td>

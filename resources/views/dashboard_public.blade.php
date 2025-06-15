@@ -8,7 +8,9 @@
     <div class="hero-section">
         <div class="search-bar">
             <input type="text" placeholder="Masukkan nama Mahasiswa">
-            <button><i class="fas fa-search"></i></button>
+            <a href="{{ route('dashboardPencarian') }}" class="btn">
+                <i class="fas fa-search"></i>
+            </a>
         </div>
     </div>
 

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\dashboardPublicController;
+use App\Http\Controllers\dashboardBiodataController;
+use App\Http\Controllers\dashboardPencarianController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard_public');
-});
+Route::get('/', [dashboardPublicController::class, 'dashboardPublic'])->name('dashboardPublic');
+
+Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboardPencarian'])->name('dashboardPencarian');
+
+Route::get('/dashboardbiodata', [dashboardBiodataController::class, 'dashboardBiodata'])->name('dashboardBiodata');
