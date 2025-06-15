@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardPublicController;
 use App\Http\Controllers\dashboardBiodataController;
 use App\Http\Controllers\dashboardPencarianController;
+use App\Http\Controllers\loginEksekutifController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,5 @@ Route::get('/', [dashboardPublicController::class, 'dashboardPublic'])->name('da
 Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboardPencarian'])->name('dashboardPencarian');
 
 Route::get('/dashboardbiodata', [dashboardBiodataController::class, 'dashboardBiodata'])->name('dashboardBiodata');
+
+Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'])->name('login.eksekutif');

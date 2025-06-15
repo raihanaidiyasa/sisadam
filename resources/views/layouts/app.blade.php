@@ -25,7 +25,7 @@
         <div class="header-right-nav">
             <a href="#" class="nav-link">About Us</a>
             <a href="#" class="nav-link">Dataset</a>
-            <button class="login-button">Login Eksekutif</button>
+            <a href="{{ route('login.eksekutif') }}" class="login-button">Login Eksekutif</a>
         </div>
     </div>
 
