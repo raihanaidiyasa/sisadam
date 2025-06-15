@@ -71,6 +71,11 @@ body {
     width: 150px;
     height: 43.173px;
     flex-shrink: 0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
 }
 
 .footer {
