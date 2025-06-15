@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboardPublicController;
 use App\Http\Controllers\dashboardBiodataController;
 use App\Http\Controllers\dashboardPencarianController;
 use App\Http\Controllers\loginEksekutifController;
+use App\Http\Controllers\dashboardEksekutifController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,10 @@ Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboa
 
 Route::get('/dashboardbiodata', [dashboardBiodataController::class, 'dashboardBiodata'])->name('dashboardBiodata');
 
-Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'])->name('login.eksekutif');
+// GET route - Show login form
+Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'])->name('login.eksekutif.form');
+
+// POST route - Process login form
+Route::post('/login-eksekutif', [loginEksekutifController::class, 'login'])->name('login.eksekutif');
+
+Route::get('/dashboard/eksekutif', [dashboardEksekutifController::class, 'eksekutif'])->name('dashboard.eksekutif');

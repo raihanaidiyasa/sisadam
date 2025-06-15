@@ -11,7 +11,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('navbar/navbar_footer.css') }}">
     
-    @yield('styles') {{-- Untuk CSS tambahan spesifik halaman jika ada --}}
+    @stack('styles') {{-- Changed from @yield('styles') to @stack('styles') --}}
+    @yield('styles') {{-- Keep this for backward compatibility --}}
 </head>
 <body>
     <div class="header">
@@ -41,6 +42,7 @@
         </div>
     </div>
 
-    @yield('scripts') {{-- Untuk JavaScript tambahan spesifik halaman jika ada --}}
+    @stack('scripts') {{-- Changed from @yield('scripts') to @stack('scripts') --}}
+    @yield('scripts') {{-- Keep this for backward compatibility --}}
 </body>
 </html>
