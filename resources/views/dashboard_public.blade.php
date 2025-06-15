@@ -3,6 +3,7 @@
 @section('title', 'Halaman Utama - Satu Data Mahasiswa') {{-- Mengganti judul spesifik halaman --}}
 
 @section('content') {{-- Memulai bagian konten --}}
+
 <link rel="stylesheet" href="{{ asset('dashboard_public/dashboard_public.css') }}">
     <div class="hero-section">
         <div class="search-bar">

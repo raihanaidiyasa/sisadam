@@ -4,7 +4,7 @@
 
 @section('content') {{-- Memulai bagian konten --}}
 
-<link rel="stylesheet" href="dashboard_pencarian.css">
+<link rel="stylesheet" href="{{ asset('dashboard_public/dashboard_pencarian.css') }}">
 <div class="breadcrumb">
         <span>Beranda</span> &gt; <strong>Hasil Pencarian</strong>
     </div>
