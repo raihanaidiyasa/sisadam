@@ -22,3 +22,4 @@
             <p>Status Mahasiswa<br><strong>Laki Laki</strong></p>
         </div>
     </section>
+    @endsection {{-- Mengakhiri bagian konten --}}
