@@ -103,6 +103,12 @@
     cursor: pointer;
     border: 2px solid transparent;
 }
+.data-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 
 .data-card:hover {
     transform: translateY(-3px);

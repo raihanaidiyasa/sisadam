@@ -1,0 +1,71 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f3fa;
+    margin: 0;
+}
+
+.content-card {
+    background: white;
+    margin: 2rem auto;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 90%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header img {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: gray;
+}
+
+.download-btn {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.chart-box {
+    flex: 1 1 45%;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.chart-container canvas {
+    padding-bottom: 40px;
+}
+
+.chart-caption {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 10px;
+}

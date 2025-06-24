@@ -29,6 +29,7 @@
         </div>
 
         <div class="data-grid">
+        <a href="{{ route('data.mahasiswa.aktif') }}" class="data-card-link">
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
                 <div class="card-content">
@@ -37,6 +38,7 @@
                     </div>
                 </div>
             </div>
+        </a>
 
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">

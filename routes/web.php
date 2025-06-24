@@ -20,6 +20,8 @@ use App\Http\Controllers\dashboardEksekutifController;
 
 Route::get('/', [dashboardPublicController::class, 'dashboardPublic'])->name('dashboardPublic');
 
+Route::get('/data-mahasiswa-aktif', [dashboardPublicController::class, 'dataMahasiswaAktif'])->name('data.mahasiswa.aktif');
+
 Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboardPencarian'])->name('dashboardPencarian');
 
 Route::get('/dashboardbiodata', [dashboardBiodataController::class, 'dashboardBiodata'])->name('dashboardBiodata');
