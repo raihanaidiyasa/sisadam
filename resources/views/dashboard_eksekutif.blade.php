@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.eksekutif')
 
 @section('title', 'Dashboard Eksekutif - Satu Data Mahasiswa')
 
@@ -12,17 +12,6 @@
 @endpush
 
 @section('content')
-    <header class="header">
-        <div class="logo-section">
-            <img src="{{ asset('image/logo_sisadam.png') }}" class="logo-img" alt="Logo SISADAM">
-            <div class="logo-text">Satu Data<br>Mahasiswa</div>
-        </div>
-        <div class="header-right">
-            <button class="dashboard-public-btn">Dashboard Public</button>
-            <img src="{{ asset('image/profile.png') }}" class="profile-img" alt="Profile">
-        </div>
-    </header>
-
     <main class="main-content">
         <h1 class="page-title">Dashboard Eksekutif</h1>
 
