@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Mahasiswa Per Subjek Keilmuan - Satu Data Mahasiswa</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="subyek_keilmuan.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    </head>
+    <body>
+        <div class="content-card">
+            <div class="section-header">
+                <img src="/public/image/database_stats.png" alt="Icon" />
+                <div>
+                    <div class="title">Data Mahasiswa Per Subjek Keilmuan</div>
+                    <div class="subtitle">
+                        Distribusi dan Statistik Mahasiswa Berdasarkan Bidang
+                        Keilmuan 2020-2024
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-box large">
+                    <p class="chart-caption">
+                        Distribusi Mahasiswa Per Subjek Keilmuan Tahun 2024
+                    </p>
+                    <canvas id="distributionChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <p class="chart-caption">
+                        Tren Mahasiswa Baru Per Subjek Keilmuan 2020-2024
+                    </p>
+                    <canvas id="trendChart"></canvas>
+                </div>
+
+                <div class="chart-box">
+                    <p class="chart-caption">
+                        Perbandingan Gender Per Subjek Keilmuan 2024
+                    </p>
+                    <canvas id="genderChart"></canvas>
+                </div>
+            </div>
+
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <div class="stat-number">12,450</div>
+                    <div class="stat-label">Total Mahasiswa Aktif</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Subjek Keilmuan Utama</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3,280</div>
+                    <div class="stat-label">Mahasiswa Baru 2024</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">55.2%</div>
+                    <div class="stat-label">Persentase Mahasiswi</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="download-btn">Download</div>
+                <h3>Data Mahasiswa Teknik & Sains 2020-2024</h3>
+                <p>
+                    Data lengkap mahasiswa program studi di bidang Teknik dan
+                    Sains mencakup distribusi per fakultas, tingkat strata, dan
+                    tren penerimaan
+                </p>
+                <button class="btn-csv">CSV</button>
+            </div>
+
+            <div class="card">
+                <div class="download-btn">Download</div>
+                <h3>Data Mahasiswa Sosial & Humaniora 2020-2024</h3>
+                <p>
+                    Data detail mahasiswa program studi bidang Sosial dan
+                    Humaniora dengan analisis demografi dan perkembangan minat
+                    akademik
+                </p>
+                <button class="btn-csv">CSV</button>
+            </div>
+
+            <div class="card">
+                <div class="download-btn">Download</div>
+                <h3>Data Mahasiswa Ekonomi & Bisnis 2020-2024</h3>
+                <p>
+                    Statistik mahasiswa bidang Ekonomi dan Bisnis termasuk
+                    spesialisasi program dan proyeksi kebutuhan industri
+                </p>
+                <button class="btn-csv">CSV</button>
+            </div>
+
+            <div class="card">
+                <div class="download-btn">Download</div>
+                <h3>Data Mahasiswa Kesehatan & Kedokteran 2020-2024</h3>
+                <p>
+                    Data komprehensif mahasiswa bidang Kesehatan dan Kedokteran
+                    dengan analisis kapasitas dan kebutuhan tenaga medis
+                </p>
+                <button class="btn-csv">CSV</button>
+            </div>
+
+            <div class="card">
+                <div class="download-btn">Download</div>
+                <h3>Laporan Analisis Subjek Keilmuan Komprehensif</h3>
+                <p>
+                    Laporan lengkap analisis distribusi mahasiswa per subjek
+                    keilmuan dengan proyeksi kebutuhan dan rekomendasi
+                    pengembangan program
+                </p>
+                <button class="btn-csv">CSV</button>
+            </div>
+        </div>
+
+        <script src="subyek_keilmuan.js"></script>
+    </body>
+</html>

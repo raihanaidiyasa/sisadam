@@ -81,6 +81,7 @@
     </div>
 </a>
 
+            <a href="{{ route('dataProdiFakultas') }}" class="data-card-link">
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
                 <div class="card-content">
@@ -90,6 +91,7 @@
                 </div>
             </div>
         </div>
+</a>
 
         <!-- Charts Section -->
         <div class="charts-section">
