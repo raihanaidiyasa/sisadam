@@ -20,8 +20,9 @@ body {
     align-items: center;
 }
 .header .logo img {
-    height: 30px;
-    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
 }
 .header .logo .brand{
     width: 100%; 

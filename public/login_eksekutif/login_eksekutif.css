@@ -57,6 +57,7 @@ body {
     margin-bottom: 40px;
 }
 
+
 .logo-container {
     margin-bottom: 24px;
 }
@@ -72,6 +73,10 @@ body {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+}
+.logo-image{
+    width: 64px;
+    height: 64px;
 }
 
 .logo-square::before {
