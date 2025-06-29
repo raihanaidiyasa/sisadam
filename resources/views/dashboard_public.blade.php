@@ -15,13 +15,9 @@
     </div>
 
     <div class="content-container">
-        <div class="about-sisadam">
-            <h3>About SISADAM</h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Mauris id eleifend sollicitudin convallis. Fusce lectus ut non
-                eget ullamcorper. Sed gravida nulla adipiscing auctor dua merta risus orci ultricies tellus vitae mauris
-                pellentesque odio. Egestas tempus praesent viverra sed sit. Diam viverra in in etiam dignissim feugiat
-                tellus. Mattis diam vitae euismod id pellentesque interdum.</p>
-        </div>
+    <h2 class="section-title">SISADAM</h2>
+        <p>SISADAM lahir dari sebuah keyakinan bahwa masa depan pendidikan yang unggul dibangun di atas fondasi data yang solid. Kami adalah sebuah platform terpusat yang dirancang untuk menjawab tantangan tersebut. Misi kami sederhana namun kuat: menyatukan seluruh data mahasiswa ke dalam satu sistem yang terintegrasi, akurat, dan mudah diakses, menciptakan sumber kebenaran tunggal (single source of truth) bagi seluruh pemangku kepentingan di lingkungan akademik.</p>
+
 
         <div class="section-header">
             <img src="{{ asset('image/database_stats.png') }}" class="section-icon" alt="Database Stats">

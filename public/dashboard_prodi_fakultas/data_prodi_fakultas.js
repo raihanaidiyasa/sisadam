@@ -69,144 +69,104 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inisialisasi Grafik Fakultas dengan FORMAT BAR CHART
     const facultyCtx = document.getElementById("facultyChart");
-    if (facultyCtx) {
-        new Chart(facultyCtx.getContext("2d"), {
-            type: "bar",
-            data: {
-                labels: [
-                    "Fakultas Teknik",
-                    "Fakultas Ekonomi & Bisnis", 
-                    "Fakultas Kedokteran",
-                    "Fakultas Hukum",
-                    "Fakultas Ilmu Sosial & Politik",
-                    "Fakultas MIPA"
-                ],
-                datasets: [
-                    {
-                        label: "Jumlah Mahasiswa",
-                        data: [4520, 3890, 2760, 2180, 2640, 2250],
-                        backgroundColor: [
-                            colors.primary,
-                            colors.secondary,
-                            colors.kedokteran,
-                            colors.hukum,
-                            colors.fisipol,
-                            colors.mipa
-                        ],
-                        borderColor: [
-                            colors.primary,
-                            colors.secondary,
-                            colors.kedokteran,
-                            colors.hukum,
-                            colors.fisipol,
-                            colors.mipa
-                        ],
-                        borderWidth: 2
-                    }
-                ]
-            },
-            options: {
-                // Mewarisi semua gaya dari template
-                ...commonOptions,
-                
-                // Menambahkan atau menimpa opsi spesifik untuk chart ini
-                plugins: {
-                    ...commonOptions.plugins,
-                    tooltip: {
-                        backgroundColor: "rgba(0,0,0,0.8)",
-                        titleFont: { family: "Poppins", size: 11 },
-                        bodyFont: { family: "Poppins", size: 11 },
-                        callbacks: {
-                            label: function (context) {
-                                const label = context.dataset.label || "";
-                                const value = context.parsed.y;
-                                return `${label}: ${value.toLocaleString()} mahasiswa`;
-                            }
-                        }
-                    },
-                    legend: {
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            usePointStyle: true,
-                            padding: 15,
-                            font: {
-                                family: 'Poppins',
-                                size: 12
-                            },
-                            generateLabels: function(chart) {
-                                const data = chart.data;
-                                // Get the dataset metadata to check visibility
-                                const meta = chart.getDatasetMeta(0);
-                                
-                                return data.labels.map((label, i) => {
-                                    const dataset = data.datasets[0];
-                                    const value = dataset.data[i];
-                                    
-                                    // Check if this specific data point is hidden
-                                    let isHidden = false;
-                                    if (meta && meta.data[i]) {
-                                        isHidden = meta.data[i].hidden === true;
-                                    }
-                                    
-                                    return {
-                                        text: `${label} (${value.toLocaleString()})`,
-                                        fillStyle: isHidden ? 'rgba(128, 128, 128, 0.4)' : dataset.backgroundColor[i],
-                                        strokeStyle: isHidden ? 'rgba(128, 128, 128, 0.4)' : dataset.borderColor[i],
-                                        lineWidth: dataset.borderWidth,
-                                        pointStyle: 'circle',
-                                        hidden: isHidden,
-                                        index: i
-                                    };
-                                });
-                            }
-                        },
-                        onClick: function(e, legendItem, legend) {
-                            const index = legendItem.index;
-                            const chart = legend.chart;
-                            const meta = chart.getDatasetMeta(0);
-                            
-                            // Toggle visibility of the specific bar
-                            if (meta.data[index]) {
-                                const currentState = meta.data[index].hidden;
-                                meta.data[index].hidden = !currentState;
-                                
-                                // Update chart with animation
-                                chart.update();
-                            }
-                        }
-                    }
+if (facultyCtx) {
+    new Chart(facultyCtx.getContext("2d"), {
+        type: "bar",
+        data: {
+            // Label di sumbu X kini hanya satu, sebagai kategori umum
+            labels: ["Populasi per Fakultas"],
+            
+            // Setiap fakultas sekarang menjadi dataset terpisah
+            datasets: [
+                {
+                    label: "Fakultas Teknik",
+                    data: [4520],
+                    backgroundColor: colors.primary,
+                    borderColor: colors.primary,
+                    borderWidth: 1
                 },
-                scales: {
-                    y: {
-                        ...commonOptions.scales.y,
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: "Jumlah Mahasiswa",
-                            font: { family: "Poppins", size: 12, weight: "bold" },
-                        },
-                    },
-                    x: {
-                        ...commonOptions.scales.x,
-                        grid: { display: false },
-                        title: {
-                            display: true,
-                            text: "Fakultas",
-                            font: { family: "Poppins", size: 12, weight: "bold" },
-                        },
-                        ticks: {
-                            ...commonOptions.scales.x.ticks,
-                            maxRotation: 45,
-                            minRotation: 45
-                        }
-                    },
+                {
+                    label: "Fakultas Ekonomi & Bisnis",
+                    data: [3890],
+                    backgroundColor: colors.secondary,
+                    borderColor: colors.secondary,
+                    borderWidth: 1
                 },
-                animation: {
-                    duration: 1000,
-                    easing: 'easeInOutQuart'
+                {
+                    label: "Fakultas Kedokteran",
+                    data: [2760],
+                    backgroundColor: colors.kedokteran,
+                    borderColor: colors.kedokteran,
+                    borderWidth: 1
+                },
+                {
+                    label: "Fakultas Hukum",
+                    data: [2180],
+                    backgroundColor: colors.hukum,
+                    borderColor: colors.hukum,
+                    borderWidth: 1
+                },
+                {
+                    label: "Fakultas Ilmu Sosial & Politik",
+                    data: [2640],
+                    backgroundColor: colors.fisipol,
+                    borderColor: colors.fisipol,
+                    borderWidth: 1
+                },
+                {
+                    label: "Fakultas MIPA",
+                    data: [2250],
+                    backgroundColor: colors.mipa,
+                    borderColor: colors.mipa,
+                    borderWidth: 1
                 }
+            ]
+        },
+        options: {
+            // Mewarisi semua gaya dari template
+            ...commonOptions,
+            
+            plugins: {
+                // KITA HANYA MEWARISI DARI COMMON OPTIONS
+                // SEMUA KODE KUSTOM generateLabels DAN onClick DIHAPUS
+                ...commonOptions.plugins, 
+                
+                // Kita masih bisa menambahkan kustomisasi tooltip
+                tooltip: {
+                    backgroundColor: "rgba(0,0,0,0.8)",
+                    titleFont: { family: "Poppins", size: 11 },
+                    bodyFont: { family: "Poppins", size: 11 },
+                    callbacks: {
+                        label: function (context) {
+                            // Mengambil label dari dataset (misal: "Fakultas Teknik")
+                            const label = context.dataset.label || "";
+                            const value = context.parsed.y;
+                            return `${label}: ${value.toLocaleString()} mahasiswa`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ...commonOptions.scales.y,
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "Jumlah Mahasiswa",
+                        font: { family: "Poppins", size: 12, weight: "bold" },
+                    },
+                },
+                x: {
+                    ...commonOptions.scales.x,
+                    grid: { display: false },
+                    // Judul sumbu X tidak lagi relevan karena sudah dijelaskan oleh legenda
+                },
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutQuart'
             }
-        });
+        }
+    });
     }
 });
