@@ -10,9 +10,9 @@ class dashboardPublicController extends Controller
         return view('dashboard_public');
     }
 
-    public function dataMahasiswaAktif()
+    public function downloadDataset()
     {
-        return view('data_mahasiswa_aktif');
+        return view('download_dataset');
     }
 
 }

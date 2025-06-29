@@ -20,7 +20,7 @@ use App\Http\Controllers\dashboardEksekutifController;
 
 Route::get('/', [dashboardPublicController::class, 'dashboardPublic'])->name('dashboardPublic');
 
-Route::get('/data-mahasiswa-aktif', [dashboardPublicController::class, 'dataMahasiswaAktif'])->name('data.mahasiswa.aktif');
+Route::get('/downloaddataset', [dashboardPublicController::class, 'downloadDataset'])->name('downloadDataset');
 
 Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboardPencarian'])->name('dashboardPencarian');
 

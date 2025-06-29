@@ -15,7 +15,7 @@
 
 <div class="content-card">
         <div class="section-header">
-            <img src="/public/image/database_stats.png" alt="Icon">
+            <img src="{{ asset('image/database_stats.png') }}" alt="Icon">
             <div>
                 <div class="title">Populasi Mahasiswa Aktif 2024–2025</div>
                 <div class="subtitle">Populasi Mahasiswa Aktif 2024–2025</div>
