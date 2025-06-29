@@ -50,14 +50,16 @@
     </div>
 </a>
 
-            <div class="data-card">
-                <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
-                <div class="card-content">
-                    <div class="card-title">
-                        Populasi Mahasiswa Aktif 2020-2024 Per Fakultas
-                    </div>
-                </div>
+            <a href="{{ route('populasiPerfakultas') }}" class="data-card-link">
+    <div class="data-card">
+        <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
+        <div class="card-content">
+            <div class="card-title">
+                Populasi Mahasiswa Aktif 2020 - 2024 Perfakultas
             </div>
+        </div>
+    </div>
+</a>
 
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">

@@ -7,6 +7,7 @@ use App\Http\Controllers\dashboardPencarianController;
 use App\Http\Controllers\loginEksekutifController;
 use App\Http\Controllers\dashboardEksekutifController;
 use App\Http\Controllers\perbandinganGenderController;
+use App\Http\Controllers\populasiPerfakultasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,5 @@ Route::get('/dashboard/eksekutif', [dashboardEksekutifController::class, 'ekseku
 Route::get('data.mahasiswa.aktif', [dashboardEksekutifController::class, 'dataMahasiswaAktif'])->name('dataMahasiswaAktif');
 
 Route::get('/perbandingan-gender-mahasiswa', [perbandinganGenderController::class, 'index'])->name('perbandinganGenderMahasiswa');
+
+Route::get('/populasi-perfakultas', [populasiPerfakultasController::class, 'index'])->name('populasiPerfakultas');

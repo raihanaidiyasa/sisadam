@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Populasi Mahasiswa Aktif Per Fakultas - Satu Data Mahasiswa
+        </title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="populasi_perfakultas.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    </head>
+    <body>
+        <div class="content-card">
+            <div class="section-header">
+                <img src="/public/image/database_stats.png" alt="Icon" />
+                <div>
+                    <div class="title">
+                        Populasi Mahasiswa Aktif 2020-2024 Per Fakultas
+                    </div>
+                    <div class="subtitle">
+                        Data populasi mahasiswa aktif berdasarkan fakultas dari
+                        tahun 2020 hingga 2024
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <div class="chart-box">
+                    <p class="chart-caption">
+                        Grafik Populasi Mahasiswa Aktif Per Fakultas Tahun
+                        2020–2024
+                    </p>
+                    <canvas id="fakultasChart"></canvas>
+                </div>
+            </div>
+
+            <div class="data-cards">
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Data Fakultas Teknik 2020-2024</h3>
+                    <p>
+                        Data populasi mahasiswa aktif Fakultas Teknik dari tahun
+                        2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Data Fakultas Ekonomi dan Bisnis 2020-2024</h3>
+                    <p>
+                        Data populasi mahasiswa aktif Fakultas Ekonomi dan
+                        Bisnis dari tahun 2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Data Fakultas Kedokteran 2020-2024</h3>
+                    <p>
+                        Data populasi mahasiswa aktif Fakultas Kedokteran dari
+                        tahun 2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Data Fakultas Hukum 2020-2024</h3>
+                    <p>
+                        Data populasi mahasiswa aktif Fakultas Hukum dari tahun
+                        2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Data Fakultas Ilmu Sosial dan Politik 2020-2024</h3>
+                    <p>
+                        Data populasi mahasiswa aktif Fakultas Ilmu Sosial dan
+                        Politik dari tahun 2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+
+                <div class="card">
+                    <div class="download-btn">Download</div>
+                    <h3>Ringkasan Semua Fakultas 2020-2024</h3>
+                    <p>
+                        Data lengkap populasi mahasiswa aktif seluruh fakultas
+                        dari tahun 2020 hingga 2024
+                    </p>
+                    <button class="btn-csv">CSV</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Fakultas Population Chart
+            const fakultasCtx = document
+                .getElementById("fakultasChart")
+                .getContext("2d");
+            const fakultasChart = new Chart(fakultasCtx, {
+                type: "bar",
+                data: {
+                    labels: ["2020", "2021", "2022", "2023", "2024"],
+                    datasets: [
+                        {
+                            label: "Fakultas Teknik",
+                            data: [4200, 4350, 4500, 4650, 4800],
+                            backgroundColor: "#DB005B",
+                            borderColor: "#DB005B",
+                            borderWidth: 1,
+                        },
+                        {
+                            label: "Fakultas Ekonomi & Bisnis",
+                            data: [3800, 3900, 4100, 4200, 4350],
+                            backgroundColor: "#9E03A3",
+                            borderColor: "#9E03A3",
+                            borderWidth: 1,
+                        },
+                        {
+                            label: "Fakultas Kedokteran",
+                            data: [2100, 2200, 2350, 2450, 2600],
+                            backgroundColor: "#FF6B9D",
+                            borderColor: "#FF6B9D",
+                            borderWidth: 1,
+                        },
+                        {
+                            label: "Fakultas Hukum",
+                            data: [1800, 1850, 1900, 1950, 2000],
+                            backgroundColor: "#C44569",
+                            borderColor: "#C44569",
+                            borderWidth: 1,
+                        },
+                        {
+                            label: "Fakultas Ilmu Sosial & Politik",
+                            data: [2200, 2300, 2400, 2500, 2600],
+                            backgroundColor: "#F8B500",
+                            borderColor: "#F8B500",
+                            borderWidth: 1,
+                        },
+                        {
+                            label: "Fakultas MIPA",
+                            data: [1500, 1600, 1700, 1800, 1900],
+                            backgroundColor: "#6C5CE7",
+                            borderColor: "#6C5CE7",
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: "bottom",
+                            labels: {
+                                font: {
+                                    family: "Poppins",
+                                    size: 12,
+                                },
+                                usePointStyle: true,
+                                padding: 15,
+                            },
+                        },
+                        tooltip: {
+                            backgroundColor: "rgba(0,0,0,0.8)",
+                            titleFont: {
+                                family: "Poppins",
+                                size: 13,
+                            },
+                            bodyFont: {
+                                family: "Poppins",
+                                size: 12,
+                            },
+                        },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: "rgba(0,0,0,0.1)",
+                            },
+                            ticks: {
+                                font: {
+                                    family: "Poppins",
+                                    size: 11,
+                                },
+                            },
+                            title: {
+                                display: true,
+                                text: "Jumlah Mahasiswa",
+                                font: {
+                                    family: "Poppins",
+                                    size: 12,
+                                    weight: "bold",
+                                },
+                            },
+                        },
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                            ticks: {
+                                font: {
+                                    family: "Poppins",
+                                    size: 11,
+                                },
+                            },
+                            title: {
+                                display: true,
+                                text: "Tahun",
+                                font: {
+                                    family: "Poppins",
+                                    size: 12,
+                                    weight: "bold",
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
