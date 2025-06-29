@@ -22,8 +22,6 @@
             </div>
         </div>
 
-        <button class="download-btn">Download</button>
-
         <div class="charts">
             <div class="chart-box">
                 <p class="chart-caption"> Grafik Jumlah Mahasiswa Aktif Tahun 2020–2024</p>

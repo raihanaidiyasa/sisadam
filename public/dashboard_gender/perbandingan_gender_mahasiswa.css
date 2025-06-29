@@ -68,7 +68,7 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(219, 0, 91, 0.4);
 }
-
+/* 
 .charts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -98,8 +98,39 @@ body {
 .chart-box canvas {
     width: 100% !important;
     height: 300px !important;
+} */
+.charts {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
 }
 
+.chart-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    padding: 1rem;
+}
+
+.chart-container canvas {
+    padding-bottom: 40px;
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.chart-caption {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 20px;
+}
 .card {
     background: white;
     border: 1px solid #e9ecef;
@@ -108,12 +139,12 @@ body {
     margin-bottom: 20px;
     position: relative;
     transition: all 0.3s ease;
-    border-left: 4px solid #DB005B;
 }
 
 .card:hover {
-    box-shadow: 0 4px 15px rgba(219, 0, 91, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #DB005B;
 }
 
 .card .download-btn {
@@ -142,24 +173,14 @@ body {
 }
 
 .btn-csv {
-    background: #DB005B;
+    background-color: #a76b00;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-csv:hover {
-    background: #9E03A3;
-    transform: translateY(-1px);
-}
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {

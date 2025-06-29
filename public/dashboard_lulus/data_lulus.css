@@ -68,41 +68,62 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(219, 0, 91, 0.4);
 }
-
-.charts {
-    display: flex;
-    justify-content: center;
+/* .chart{
+    margin: 40px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #ffffff;
     margin-bottom: 40px;
 }
 
 .chart-box {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 25px;
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 900px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.chart-box:hover {
-    box-shadow: 0 4px 15px rgba(219, 0, 91, 0.1);
-    transform: translateY(-2px);
+    text-align: center;
 }
 
 .chart-caption {
-    font-size: 15px;
-    color: #444;
-    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 20px 0;
     text-align: center;
-    font-weight: 500;
 }
 
 .chart-box canvas {
-    width: 100% !important;
-    height: 400px !important;
+    max-width: 100%;
+    height: 500px !important;
+    margin: 0 auto;
+} */
+.charts {
+    margin: 40px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #ffffff;
+    margin-bottom: 40px;
 }
 
+.chart-box {
+    border-radius: 12px;
+    max-width: 900px;
+    height: 400px;
+    margin: auto;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.chart-container canvas {
+    padding-bottom: 40px;
+    width: 100% !important;
+    height: 300px !important;
+}
+
+.chart-caption {
+    font-weight: bold;
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 20px;
+}
 .summary-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -147,12 +168,12 @@ body {
     margin-bottom: 20px;
     position: relative;
     transition: all 0.3s ease;
-    border-left: 4px solid #DB005B;
 }
 
 .card:hover {
-    box-shadow: 0 4px 15px rgba(219, 0, 91, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #DB005B;
 }
 
 .card .download-btn {
@@ -181,24 +202,14 @@ body {
 }
 
 .btn-csv {
-    background: #DB005B;
+    background-color: #a76b00;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-csv:hover {
-    background: #9E03A3;
-    transform: translateY(-1px);
-}
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {
