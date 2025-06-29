@@ -10,4 +10,9 @@ class DashboardEksekutifController extends Controller
     {
         return view('dashboard_eksekutif');
     }
+
+    public function dataMahasiswaAktif()
+    {
+        return view('data_mahasiswa_aktif');
+    }
 }

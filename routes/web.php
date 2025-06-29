@@ -33,3 +33,5 @@ Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'
 Route::post('/login-eksekutif', [loginEksekutifController::class, 'login'])->name('login.eksekutif');
 
 Route::get('/dashboard/eksekutif', [dashboardEksekutifController::class, 'eksekutif'])->name('dashboard.eksekutif');
+
+Route::get('data.mahasiswa.aktif', [dashboardEksekutifController::class, 'dataMahasiswaAktif'])->name('dataMahasiswaAktif');

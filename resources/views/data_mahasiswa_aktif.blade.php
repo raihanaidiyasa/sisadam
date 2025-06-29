@@ -1,4 +1,4 @@
-@extends('layouts.app') {{-- Memperpanjang layout utama --}}
+@extends('layouts.eksekutif') {{-- Memperpanjang layout utama --}}
 
 @section('title', 'Halaman Utama - Satu Data Mahasiswa') {{-- Mengganti judul spesifik halaman --}}
 
@@ -35,6 +35,26 @@
                 </p>
                 <canvas id="strataChart"></canvas>
             </div>
+        </div>
+
+        <div class="card">
+            <div class="download-btn">Download</div>
+            <h3>Jumlah Mahasiswa Aktif tahun 3035</h3>
+            <p>data Jumlah Koperasi dan Anggota Ksu Menurut Jenis Kelamin dan Kecamatan di Kabupaten Batang thn 2018</p>
+            <button class="btn-csv">CSV</button>
+        </div>
+
+        <div class="card">
+            <div class="download-btn">Download</div>
+            <h3>Jumlah Mahasiswa Aktif tahun 3034</h3>
+            <p>data Jumlah Koperasi dan Anggota Ksu Menurut Jenis Kelamin dan Kecamatan di Kabupaten Batang thn 2018</p>
+            <button class="btn-csv">CSV</button>
+        </div>
+        <div class="card">
+            <div class="download-btn">Download</div>
+            <h3>Jumlah Mahasiswa Aktif tahun 3034</h3>
+            <p>data Jumlah Koperasi dan Anggota Ksu Menurut Jenis Kelamin dan Kecamatan di Kabupaten Batang thn 2018</p>
+            <button class="btn-csv">CSV</button>
         </div>
     </div>
 @endsection
