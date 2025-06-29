@@ -70,12 +70,16 @@
                 </div>
             </div>
 
-            <div class="data-card">
-                <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
-                <div class="card-content">
-                    <div class="card-title">Data lulusan tepat waktu</div>
-                </div>
+           <a href="{{ route('dataLulus') }}" class="data-card-link">
+    <div class="data-card">
+        <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
+        <div class="card-content">
+            <div class="card-title">
+                Data Lulusan Tepat Waktu
             </div>
+        </div>
+    </div>
+</a>
 
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">

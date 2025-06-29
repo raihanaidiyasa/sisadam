@@ -8,6 +8,7 @@ use App\Http\Controllers\loginEksekutifController;
 use App\Http\Controllers\dashboardEksekutifController;
 use App\Http\Controllers\perbandinganGenderController;
 use App\Http\Controllers\populasiPerfakultasController;
+use App\Http\Controllers\dataLulusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,5 @@ Route::get('data.mahasiswa.aktif', [dashboardEksekutifController::class, 'dataMa
 Route::get('/perbandingan-gender-mahasiswa', [perbandinganGenderController::class, 'index'])->name('perbandinganGenderMahasiswa');
 
 Route::get('/populasi-perfakultas', [populasiPerfakultasController::class, 'index'])->name('populasiPerfakultas');
+
+Route::get('/data-lulus', [dataLulusController::class, 'index'])->name('dataLulus');
