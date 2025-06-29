@@ -39,14 +39,16 @@
             </div>
         </a>
 
-            <div class="data-card">
-                <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
-                <div class="card-content">
-                    <div class="card-title">
-                        Perbandingan jumlah mahasiswa laki laki dan perempuan per strata
-                    </div>
-                </div>
+            <a href="{{ route('perbandinganGenderMahasiswa') }}" class="data-card-link">
+    <div class="data-card">
+        <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
+        <div class="card-content">
+            <div class="card-title">
+                Perbandingan jumlah mahasiswa laki laki dan perempuan per strata
             </div>
+        </div>
+    </div>
+</a>
 
             <div class="data-card">
                 <img src="{{ asset('image/database_stats.png') }}" class="card-icon" alt="Database Stats">
