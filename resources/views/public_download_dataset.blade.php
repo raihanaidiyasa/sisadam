@@ -28,7 +28,7 @@
 
         <div class="card">
             <div class="download-btn">Download</div>
-            <h3>Jumlah Mahasiswa Aktif tahun 3034</h3>
+            <h3>Jumlah Mahasiswa Aktif tahun 2024</h3>
             <p>data Jumlah Koperasi dan Anggota Ksu Menurut Jenis Kelamin dan Kecamatan di Kabupaten Batang thn 2018</p>
             <button class="btn-csv">CSV</button>
         </div>
