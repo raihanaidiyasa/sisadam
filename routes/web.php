@@ -21,29 +21,23 @@ use App\Http\Controllers\dataProdiFakultasController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', [dashboardPublicController::class, 'dashboardPublic'])->name('dashboardPublic');
-
+Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'])->name('login');
+Route::post('/login-eksekutif', [loginEksekutifController::class, 'login_proses'])->name('login.eksekutif');
 Route::get('/downloaddataset', [dashboardPublicController::class, 'downloadDataset'])->name('downloadDataset');
-
 Route::get('/dashboardpencarian', [dashboardPencarianController::class, 'dashboardPencarian'])->name('dashboardPencarian');
-
 Route::get('/dashboardbiodata', [dashboardBiodataController::class, 'dashboardBiodata'])->name('dashboardBiodata');
 
-// GET route - Show login form
-Route::get('/login-eksekutif', [loginEksekutifController::class, 'showLoginForm'])->name('login.eksekutif.form');
 
-// POST route - Process login form
-Route::post('/login-eksekutif', [loginEksekutifController::class, 'login'])->name('login.eksekutif');
+Route::middleware('auth')->group(function() {
+    Route::get('/dashboard/eksekutif', [dashboardEksekutifController::class, 'eksekutif'])->name('dashboard.eksekutif');
+    Route::get('data.mahasiswa.aktif', [dashboardEksekutifController::class, 'dataMahasiswaAktif'])->name('dataMahasiswaAktif');
 
-Route::get('/dashboard/eksekutif', [dashboardEksekutifController::class, 'eksekutif'])->name('dashboard.eksekutif');
+    Route::get('/perbandingan-gender-mahasiswa', [perbandinganGenderController::class, 'index'])->name('perbandinganGenderMahasiswa');
 
-Route::get('data.mahasiswa.aktif', [dashboardEksekutifController::class, 'dataMahasiswaAktif'])->name('dataMahasiswaAktif');
+    Route::get('/populasi-perfakultas', [populasiPerfakultasController::class, 'index'])->name('populasiPerfakultas');
 
-Route::get('/perbandingan-gender-mahasiswa', [perbandinganGenderController::class, 'index'])->name('perbandinganGenderMahasiswa');
+    Route::get('/data-lulus', [dataLulusController::class, 'index'])->name('dataLulus');
 
-Route::get('/populasi-perfakultas', [populasiPerfakultasController::class, 'index'])->name('populasiPerfakultas');
-
-Route::get('/data-lulus', [dataLulusController::class, 'index'])->name('dataLulus');
-
-Route::get('/data-prodi-fakultas', [dataProdiFakultasController::class, 'index'])->name('dataProdiFakultas');
+    Route::get('/data-prodi-fakultas', [dataProdiFakultasController::class, 'index'])->name('dataProdiFakultas');
+});

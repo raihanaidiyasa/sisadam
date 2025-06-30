@@ -24,51 +24,27 @@
         </div>
 
         <div class="card-body">
-            <!-- Display validation errors -->
-            @if ($errors->any())
-                <div class="alert alert-error">
-                    <ul class="error-list">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <!-- Display success message -->
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-            <!-- Display error message -->
-            @if (session('error'))
-                <div class="alert alert-error">
-                    {{ session('error') }}
-                </div>
-            @endif
-
+            
             <form class="login-form" method="POST" action="{{ route('login.eksekutif') }}">
                 @csrf
                 
                 <div class="form-group">
-                    <label class="form-label" for="nomor_identitas">Nomor Identitas</label>
+                    <label class="form-label" for="username">Username</label>
                     <div class="input-wrapper">
                         <input 
                             type="text" 
-                            id="nomor_identitas"
-                            name="nomor_identitas" 
-                            class="form-input @error('nomor_identitas') error @enderror" 
-                            placeholder="Masukkan nomor identitas" 
-                            value="{{ old('nomor_identitas') }}"
+                            id="username"
+                            name="username" 
+                            class="form-input @error('username') error @enderror" 
+                            placeholder="Masukkan username" 
+                            value="{{ old('username') }}"
                             required 
                             autofocus
                         >
                         <div class="input-border"></div>
                     </div>
-                    @error('nomor_identitas')
-                        <span class="field-error">{{ $message }}</span>
+                    @error('username')
+                        <span class="field-error" style="color: red; font-size: 0.875rem;">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -86,7 +62,7 @@
                         <div class="input-border"></div>
                     </div>
                     @error('password')
-                        <span class="field-error">{{ $message }}</span>
+                        <span class="field-error" style="color: red; font-size: 0.875rem;">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -102,9 +78,6 @@
                         <span class="checkbox-custom"></span>
                         <span class="checkbox-label">Ingat saya</span>
                     </label>
-                    @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}" class="forgot-link">Lupa kata sandi?</a>
-                    @endif
                 </div>
 
                 <button type="submit" class="submit-btn">

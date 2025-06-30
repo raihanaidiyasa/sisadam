@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Models\AkunEksekutif;
 
 class LoginEksekutifController extends Controller
 {
@@ -11,27 +15,23 @@ class LoginEksekutifController extends Controller
         return view('login_eksekutif');
     }
 
-    public function login(Request $request)
+    public function login_proses(Request $request): RedirectResponse
     {
-        // Validate the form data
         $request->validate([
-            'nomor_identitas' => 'required|string',
+            'username' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        // Here you would typically check credentials against database
-        // For now, let's just redirect to dashboard
-        
-        // You can add your authentication logic here
-        // For example:
-        // if (Auth::attempt(['nomor_identitas' => $request->nomor_identitas, 'password' => $request->password])) {
-        //     return redirect()->route('dashboard.executive');
-        // }
-        
-        // For testing purposes, redirect directly to dashboard
-        return redirect()->route('dashboard.eksekutif');
-        
-        // If login fails, redirect back with error
-        // return back()->with('error', 'Invalid credentials');
+        $credentials = $request->only('username', 'password');
+
+        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+            $request->session()->regenerate();
+
+            return redirect()->route('dashboard.eksekutif');
+        }
+
+        return back()->withErrors([
+            'username' => 'Username atau Kata Sandi yang Anda masukkan salah.',
+        ])->onlyInput('username');
     }
 }
