@@ -22,8 +22,7 @@
         <div class="logo-text">Satu Data<br>Mahasiswa</div>
     </div>
     <div class="header-right">
-        <button class="dashboard-public-btn">Dashboard Public</button>
-        <img src="{{ asset('image/profile.png') }}" class="profile-img" alt="Profile">
+        <button class="dashboard-public-btn">Logout</button>
     </div>
 </header>
 
