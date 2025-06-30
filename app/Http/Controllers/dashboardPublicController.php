@@ -12,7 +12,7 @@ class dashboardPublicController extends Controller
 
     public function downloadDataset()
     {
-        return view('download_dataset');
+        return view('public_download_dataset');
     }
 
 }
