@@ -147,5 +147,11 @@
 @endsection
 
 @push('scripts')
+    <script id="chart-data"
+        data-ukt="{{ json_encode($uktData) }}"
+        data-status="{{ json_encode($statusData) }}"
+        data-asal="{{ json_encode($asalData) }}"
+        data-populasi="{{ json_encode($populasiData) }}"
+    ></script>
     <script src="{{ asset('dashboard_eksekutif/grafik.js') }}"></script>
 @endpush

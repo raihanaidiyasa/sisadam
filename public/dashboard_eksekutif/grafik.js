@@ -1,5 +1,15 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    const chartDataSource = document.getElementById('chart-data');
+    if (!chartDataSource) {
+        console.error('Elemen sumber data grafik tidak ditemukan!');
+        return;
+    }
+
+    const uktData = JSON.parse(chartDataSource.dataset.ukt);
+    const statusData = JSON.parse(chartDataSource.dataset.status);
+    const asalData = JSON.parse(chartDataSource.dataset.asal);
+    const populasiData = JSON.parse(chartDataSource.dataset.populasi)
     // Color palette based on your requirements
     const colors = {
         primary: '#DB005B',    // Pink
@@ -40,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: {
                 labels: ['Sudah Bayar', 'Belum Bayar'],
                 datasets: [{
-                    data: [65, 35],
+                    data: [uktData.lunas, uktData.belum_lunas],
                     backgroundColor: [
                         colors.primary,
                         colors.light
@@ -103,13 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 3. Status Mahasiswa (Doughnut Chart)
     const statusCtx = document.getElementById('statusChart');
-    if (statusCtx) {
+    if (statusCtx && statusData) {
         new Chart(statusCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Aktif', 'Cuti', 'DO', 'Lulus'],
+                labels: Object.keys(statusData),
                 datasets: [{
-                    data: [70, 15, 10, 5],
+                    data: Object.values(statusData),
                     backgroundColor: [
                         colors.primary,
                         colors.secondary,
@@ -139,14 +149,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 4. Asal Daerah (Horizontal Bar Chart)
     const asalCtx = document.getElementById('asalChart');
-    if (asalCtx) {
+    if (asalCtx && asalData) {
         new Chart(asalCtx, {
             type: 'bar',
             data: {
-                labels: ['Jawa Barat', 'Banten', 'DKI Jakarta', 'Jawa Tengah', 'Lainnya'],
+                labels: Object.keys(asalData),
                 datasets: [{
                     label: 'Jumlah Mahasiswa',
-                    data: [4500, 3200, 2800, 2200, 1800],
+                    data: Object.values(asalData),
                     backgroundColor: [
                         colors.primary,
                         colors.secondary,
@@ -177,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 5. Grafik Jumlah Mahasiswa Aktif (Line Chart)
     const populasiCtx = document.getElementById('populasiChart');
-    if (populasiCtx) {
+    if (populasiCtx && populasiData) {
         new Chart(populasiCtx, {
             type: 'line',
             data: {
