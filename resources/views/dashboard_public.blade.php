@@ -6,12 +6,12 @@
 
 <link rel="stylesheet" href="{{ asset('dashboard_public/dashboard_public.css') }}">
     <div class="hero-section">
-        <div class="search-bar">
-            <input type="text" placeholder="Masukkan nama Mahasiswa">
-            <a href="{{ route('dashboardPencarian') }}" class="btn">
+        <form action="{{ route('dashboardPencarian') }}" method="GET" class="search-bar">
+            <input type="text" name="search" placeholder="Cari Nama atau NIM Mahasiswa">
+            <button type="submit" class="btn">
                 <i class="fas fa-search"></i>
-            </a>
-        </div>
+            </button>
+        </form>
     </div>
 
     <div class="content-container">

@@ -312,19 +312,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.search-input');
     const searchBtn = document.querySelector('.search-btn');
     
-    function handleSearch() {
-        const searchTerm = searchInput.value.trim();
-        if (searchTerm) {
-            // Simulate search functionality
-            console.log('Searching for:', searchTerm);
-            // You can implement actual search logic here
-            alert(`Mencari data untuk: ${searchTerm}`);
-        }
-    }
+    // function handleSearch() {
+    //     const searchTerm = searchInput.value.trim();
+    //     if (searchTerm) {
+    //         // Simulate search functionality
+    //         console.log('Searching for:', searchTerm);
+    //         // You can implement actual search logic here
+    //         alert(`Mencari data untuk: ${searchTerm}`);
+    //     }
+    // }
     
-    if (searchBtn) {
-        searchBtn.addEventListener('click', handleSearch);
-    }
+    // if (searchBtn) {
+    //     searchBtn.addEventListener('click', handleSearch);
+    // }
     
     if (searchInput) {
         searchInput.addEventListener('keypress', function(e) {

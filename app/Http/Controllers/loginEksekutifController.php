@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Models\AkunEksekutif;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginEksekutifController extends Controller
 {
@@ -33,5 +34,15 @@ class LoginEksekutifController extends Controller
         return back()->withErrors([
             'username' => 'Username atau Kata Sandi yang Anda masukkan salah.',
         ])->onlyInput('username');
+    }
+
+    public function logout (Request $request): RedirectResponse {
+        Auth::logout();
+        
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

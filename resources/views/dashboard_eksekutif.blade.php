@@ -15,12 +15,12 @@
     <main class="main-content">
         <h1 class="page-title">Dashboard Eksekutif</h1>
 
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Masukan Nama Mahasiswa">
-            <button class="search-btn">
+        <form action="{{ route('dashboardPencarian') }}" method="GET" class="search-container">
+            <input type="text" name="search" class="search-input" placeholder="Masukan Nama atau NIM Mahasiswa">
+            <button type="submit" class="search-btn">
                 <img src="{{ asset('image/searchvector.png') }}" alt="Search">
             </button>
-        </div>
+        </form>
 
         <div class="section-header">
             <img src="{{ asset('image/database_stats.png') }}" class="section-icon" alt="Database Stats">

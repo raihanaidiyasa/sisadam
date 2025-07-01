@@ -17,13 +17,16 @@
 </head>
 
 <header class="header">
-    <div class="logo-section">
-        <img src="{{ asset('image/logo_sisadam.png') }}" class="logo-img" alt="Logo SISADAM">
-        <div class="logo-text">Satu Data<br>Mahasiswa</div>
-    </div>
-    <div class="header-right">
-        <button class="dashboard-public-btn">Logout</button>
-    </div>
+    <a href="{{ route('dashboard.eksekutif') }}" class="logo-link">
+            <div class="logo-section">
+                <img src="{{ asset('image/logo_sisadam.png') }}" class="logo-img" alt="Logo SISADAM">
+                <div class="logo-text">Satu Data<br>Mahasiswa</div>
+            </div>
+        </a>
+     <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="dashboard-public-btn">Logout</button>
+    </form>
 </header>
 
 @yield('content') {{-- Slot untuk konten utama halaman --}}

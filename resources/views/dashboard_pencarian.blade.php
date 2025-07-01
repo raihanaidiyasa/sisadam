@@ -1,62 +1,70 @@
-@extends('layouts.app') {{-- Memperpanjang layout utama --}}
+@extends(Auth::check() ? 'layouts.eksekutif' : 'layouts.app')
 
-@section('title', 'Halaman Utama - Satu Data Mahasiswa') {{-- Mengganti judul spesifik halaman --}}
+@section('title', 'Hasil Pencarian - Satu Data Mahasiswa')
 
-@section('content') {{-- Memulai bagian konten --}}
+@section('content')
 
 <link rel="stylesheet" href="{{ asset('dashboard_public/dashboard_pencarian.css') }}">
 <div class="breadcrumb">
-        <span>Beranda</span> &gt; <strong>Hasil Pencarian</strong>
-    </div>
+    <span>Beranda</span> &gt; <strong>Hasil Pencarian</strong>
+</div>
 
-    <div class="search-results-container">
-        <h2>Hasil Pencarian</h2>
-        <div class="search-box">
-            <input type="text" placeholder="Nama Mahasiswa">
-            <button><i class="fas fa-search"></i></button>
+<div class="search-results-container">
+    <h2>Hasil Pencarian</h2>
+    
+    <!-- Form Pencarian -->
+    <form action="{{ route('dashboardPencarian') }}" method="GET" class="search-box">
+        <input type="text" name="search" placeholder="Cari Nama atau NIM Mahasiswa" value="{{ request('search') }}">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Program Studi</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{-- Cek jika ada data mahasiswa --}}
+                @forelse ($mahasiswas as $mahasiswa)
+                <tr>
+                    <td>{{ $mahasiswa->nama }}</td>
+                    <td>{{ $mahasiswa->nim }}</td>
+                    {{-- Menggunakan accessor yang kita buat di model --}}
+                    <td>{{ $mahasiswa->jenis_kelamin_text }}</td> 
+                    {{-- Mengambil nama jurusan dari relasi. Tanda ?? 'N/A' untuk jaga-jaga jika data jurusan tidak ada --}}
+                    <td>{{ $mahasiswa->jurusan->nama_jurusan ?? 'N/A' }}</td>
+                    <td><a href="{{ route('dashboardBiodata', $mahasiswa->nim) }}">Lihat Detail</a></td>
+                </tr>
+                @empty
+                {{-- Tampilan jika tidak ada data yang ditemukan --}}
+                <tr>
+                    <td colspan="5" style="text-align: center; padding: 20px;">Data tidak ditemukan.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+
+        {{-- Navigasi Paginasi Kustom --}}
+        <div class="pagination">
+            {{-- Tombol Kembali (Previous) --}}
+            <a href="{{ $mahasiswas->previousPageUrl() }}" class="pagination-arrow @if ($mahasiswas->onFirstPage()) disabled @endif">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            {{-- Tampilan Halaman --}}
+            <span>{{ $mahasiswas->currentPage() }} dari {{ $mahasiswas->lastPage() }}</span>
+
+            {{-- Tombol Selanjutnya (Next) --}}
+            <a href="{{ $mahasiswas->nextPageUrl() }}" class="pagination-arrow @if (!$mahasiswas->hasMorePages()) disabled @endif">
+                <i class="fas fa-chevron-right"></i>
+            </a>
         </div>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nama</th>
-                        <th>NIM</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Program Studi</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Raihan Aidiyasha Shadow</td>
-                        <td>1227050112</td>
-                        <td>Laki Laki</td>
-                        <td>Teknik Lingkungan</td>
-                        <td><a href="{{ route('dashboardBiodata') }}">Lihat Detail</a></td>
-                    </tr>
-                    <tr>
-                        <td>Raihan Aidigimon</td>
-                        <td>1221050012</td>
-                        <td>Laki Laki</td>
-                        <td>Dakwah Komunikasi Islam</td>
-                        <td><a href="#">Lihat Detail</a></td>
-                    </tr>
-                    <tr>
-                        <td>Raihan gemoyidiyasa</td>
-                        <td>1170012021</td>
-                        <td>Laki Laki</td>
-                        <td>Teknik Informatika</td>
-                        <td><a href="#">Lihat Detail</a></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="pagination">
-                <button disabled><i class="fas fa-chevron-left"></i></button>
-                <span>1 dari 1</span>
-                <button disabled><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
     </div>
-@endsection {{-- Mengakhiri bagian konten --}}
+</div>
+@endsection

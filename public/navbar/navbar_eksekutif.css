@@ -24,11 +24,16 @@
     object-fit: contain;
 }
 
+.logo-link {
+    text-decoration: none;
+}
+
 .logo-text {
     color: #DB005B;
     font-weight: 900;
     font-size: 22px;
     line-height: 1.3;
+    text-decoration: none;
 }
 
 .header-right {

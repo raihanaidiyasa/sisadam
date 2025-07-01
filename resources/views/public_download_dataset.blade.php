@@ -20,10 +20,12 @@
         </div>
 
         <div class="card">
-            <div class="download-btn">Download</div>
-            <h3>Jumlah Mahasiswa Aktif tahun 3035</h3>
-            <p>data Jumlah Koperasi dan Anggota Ksu Menurut Jenis Kelamin dan Kecamatan di Kabupaten Batang thn 2018</p>
-            <button class="btn-csv">CSV</button>
+            {{-- Tombol download sekarang mengarah ke rute yang benar --}}
+            <a href="{{ route('download.mahasiswa.aktif') }}" class="download-btn">Download</a>
+            <h3>Jumlah Mahasiswa Aktif</h3>
+            <p>Berisi data dasar mahasiswa aktif seperti nama, NIM, jenis kelamin, tahun masuk, jurusan, dan status kemahasiswaan.</p>
+            {{-- Tombol CSV juga mengarah ke rute yang sama --}}
+            <a href="{{ route('download.mahasiswa.aktif') }}" class="btn-csv">CSV</a>
         </div>
 
         <div class="card">
