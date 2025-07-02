@@ -12,24 +12,28 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('navbar/navbar_eksekutif.css') }}">
-    @stack('styles') {{-- Changed from @yield('styles') to @stack('styles') --}}
-    @yield('styles') {{-- Keep this for backward compatibility --}}
+    @stack('styles')
+    @yield('styles')
 </head>
+<body>
 
 <header class="header">
     <a href="{{ route('dashboard.eksekutif') }}" class="logo-link">
-            <div class="logo-section">
-                <img src="{{ asset('image/logo_sisadam.png') }}" class="logo-img" alt="Logo SISADAM">
-                <div class="logo-text">Satu Data<br>Mahasiswa</div>
-            </div>
-        </a>
-     <form method="POST" action="{{ route('logout') }}">
+        <div class="logo-section">
+            <img src="{{ asset('image/logo_sisadam.png') }}" class="logo-img" alt="Logo SISADAM">
+            <div class="logo-text">Satu Data<br>Mahasiswa</div>
+        </div>
+    </a>
+    <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit" class="dashboard-public-btn">Logout</button>
     </form>
 </header>
 
-@yield('content') {{-- Slot untuk konten utama halaman --}}
+{{-- Konten utama dibungkus di sini agar bisa mendorong footer --}}
+<div class="main-content">
+    @yield('content')
+</div>
 
 <div class="footer">
     <div class="left-text">
@@ -41,7 +45,7 @@
     </div>
 </div>
 
-@stack('scripts') {{-- Changed from @yield('scripts') to @stack('scripts') --}}
-@yield('scripts') {{-- Keep this for backward compatibility --}}
+@stack('scripts')
+@yield('scripts')
 </body>
 </html>
