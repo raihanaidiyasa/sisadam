@@ -67,7 +67,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.label + ': ' + context.parsed + '%';
+                                const allData = context.dataset.data;
+                                const total = allData.reduce((a, b) => Number(a) + Number(b), 0);
+                                const currentValue = Number(context.raw);
+
+                                if (total === 0) {
+                                    return context.label + ': 0%';
+                                }
+
+                                const percentage = ((currentValue / total) * 100).toFixed(1);
+                                return `${context.label}: ${percentage}% (${currentValue})`;
                             }
                         }
                     }
@@ -138,7 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.label + ': ' + context.parsed + '%';
+                                const allData = context.dataset.data;
+                                const total = allData.reduce((a, b) => Number(a) + Number(b), 0);
+                                const currentValue = Number(context.raw);
+
+                                if (total === 0) {
+                                    return context.label + ': 0%';
+                                }
+                                
+                                const percentage = ((currentValue / total) * 100).toFixed(1);
+                                return `${context.label}: ${percentage}% (${currentValue})`;
                             }
                         }
                     }
